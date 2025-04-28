@@ -21,4 +21,5 @@ dependencyResolutionManagement {
 
 rootProject.name = "gymbro"
 include(":app")
- 
+include(":data")
+include(":domain")
