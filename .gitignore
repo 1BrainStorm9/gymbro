@@ -1,0 +1,52 @@
+# Общие
+*.iml
+*.hprof
+*.orig
+*.log
+*.lock
+*.class
+*.jar
+*.war
+*.ear
+*.db
+*.db-journal
+*.apk
+*.ap_
+
+# Кэш сборки
+/build/
+/.idea/caches/
+/.idea/libraries/
+/.idea/modules.xml
+/.gradle/
+/local.properties
+
+# Gradle
+.gradle/
+**/build/
+
+# Android Studio
+.idea/
+/captures/
+/output.json
+
+# Кэш Kotlin
+**/out/
+
+# Конфиденциальные файлы
+keystore.properties
+google-services.json
+app/google-services.json
+
+# MacOS
+.DS_Store
+
+# Windows
+Thumbs.db
+desktop.ini
+
+# Linux
+*~
+
+# Node (если используешь)
+node_modules/
