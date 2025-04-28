@@ -61,18 +61,21 @@ fun LoginScreen(
             .background(AuthBackground)
             .padding(horizontal = 24.dp),
         verticalArrangement = Arrangement.spacedBy(24.dp, Alignment.CenterVertically),
-        horizontalAlignment = Alignment.CenterHorizontally
+        horizontalAlignment = Alignment.Start
     ) {
         Row(Modifier
             .fillMaxWidth()
-            .padding(vertical = 16.dp),
+            .offset(x = (-16).dp),
             horizontalArrangement = Arrangement.Start,
             verticalAlignment = Alignment.CenterVertically
         ) {
             BackArrowButton(onBackPress)
         }
 
-        Column(verticalArrangement = Arrangement.spacedBy(8.dp)) {
+        Column(
+            verticalArrangement = Arrangement.spacedBy(8.dp),
+            horizontalAlignment = Alignment.Start
+        ) {
             Text(
                 text = stringResource(R.string.welcome_back),
                 style = MaterialTheme.typography.headlineMedium.copy(fontWeight = FontWeight.Bold)
@@ -144,7 +147,9 @@ fun LoginScreen(
         }
 
         Row(
-            verticalAlignment = Alignment.CenterVertically
+            verticalAlignment = Alignment.CenterVertically,
+            modifier = Modifier.fillMaxWidth(),
+            horizontalArrangement = Arrangement.Center
         ) {
             HorizontalDivider(
                 modifier = Modifier.weight(1f),
@@ -184,6 +189,7 @@ fun LoginScreen(
             },
             modifier = Modifier
                 .padding(bottom = 16.dp)
+                .align(Alignment.CenterHorizontally)
                 .clickable(onClick = onRegisterClick),
             style = MaterialTheme.typography.bodySmall
         )

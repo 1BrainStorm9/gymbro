@@ -14,7 +14,8 @@
     <string name="back">Back</string>
     
     <!-- RegisterScreen strings -->
-    <string name="hello_register">Hello! Register to get started</string>
+    <string name="hello_register">Hello!</string>
+    <string name="register_to_get_started">Register to get started</string>
     <string name="enter_username">Username</string>
     <string name="confirm_password">Confirm password</string>
     <string name="or_register_with">Or Register with</string>

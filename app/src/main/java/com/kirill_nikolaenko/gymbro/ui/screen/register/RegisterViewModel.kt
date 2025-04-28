@@ -13,10 +13,6 @@ class RegisterViewModel : ViewModel() {
     private val _uiState = MutableStateFlow(RegisterUiState())
     val uiState: StateFlow<RegisterUiState> = _uiState.asStateFlow()
 
-    fun onUsernameChange(username: String) {
-        _uiState.update { it.copy(username = username) }
-    }
-
     fun onEmailChange(email: String) {
         _uiState.update { it.copy(email = email) }
     }
@@ -39,7 +35,6 @@ class RegisterViewModel : ViewModel() {
 
     fun registerWithEmail() {
         viewModelScope.launch {
-            // Validate input
             if (!validateInput()) {
                 return@launch
             }
@@ -47,14 +42,9 @@ class RegisterViewModel : ViewModel() {
             _uiState.update { it.copy(isLoading = true) }
 
             try {
-                // Call repository to register user
-                // This is where you would call your authentication service
-                // Example: authRepository.register(uiState.value.email, uiState.value.password)
-                
-                // Simulate network delay
+
                 kotlinx.coroutines.delay(1500)
                 
-                // Set registration success
                 _uiState.update { it.copy(isRegistered = true, isLoading = false) }
             } catch (e: Exception) {
                 _uiState.update { 
@@ -68,30 +58,24 @@ class RegisterViewModel : ViewModel() {
     }
 
     fun registerWithGoogle() {
-        // Implement Google registration logic
         viewModelScope.launch {
             _uiState.update { it.copy(isLoading = true) }
-            // Simulate network delay
             kotlinx.coroutines.delay(1000)
             _uiState.update { it.copy(isLoading = false, isRegistered = true) }
         }
     }
 
     fun registerWithFacebook() {
-        // Implement Facebook registration logic
         viewModelScope.launch {
             _uiState.update { it.copy(isLoading = true) }
-            // Simulate network delay
             kotlinx.coroutines.delay(1000)
             _uiState.update { it.copy(isLoading = false, isRegistered = true) }
         }
     }
 
     fun registerWithApple() {
-        // Implement Apple registration logic
         viewModelScope.launch {
             _uiState.update { it.copy(isLoading = true) }
-            // Simulate network delay
             kotlinx.coroutines.delay(1000)
             _uiState.update { it.copy(isLoading = false, isRegistered = true) }
         }
@@ -109,10 +93,6 @@ class RegisterViewModel : ViewModel() {
         val state = uiState.value
         
         when {
-            state.username.isBlank() -> {
-                _uiState.update { it.copy(errorMessage = "Username cannot be empty") }
-                return false
-            }
             state.email.isBlank() -> {
                 _uiState.update { it.copy(errorMessage = "Email cannot be empty") }
                 return false
@@ -145,7 +125,6 @@ class RegisterViewModel : ViewModel() {
 }
 
 data class RegisterUiState(
-    val username: String = "",
     val email: String = "",
     val password: String = "",
     val confirmPassword: String = "",

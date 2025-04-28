@@ -15,7 +15,8 @@
     <string name="back">Назад</string>
     
     <!-- RegisterScreen strings -->
-    <string name="hello_register">Здравствуйте! Зарегистрируйтесь, чтобы начать</string>
+    <string name="hello_register">Здравствуйте!</string>
+    <string name="register_to_get_started">Зарегистрируйтесь, чтобы начать</string>
     <string name="enter_username">Имя пользователя</string>
     <string name="confirm_password">Подтвердите пароль</string>
     <string name="or_register_with">Или зарегистрируйтесь с помощью</string>

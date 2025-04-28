@@ -32,10 +32,10 @@ import org.koin.androidx.compose.koinViewModel
 
 @Composable
 fun RegisterScreen(
-    modifier: Modifier = Modifier,
     onLoginClick: () -> Unit,
     onRegisterSuccess: () -> Unit,
     onBackPress: () -> Unit,
+    modifier: Modifier = Modifier,
     viewModel: RegisterViewModel = koinViewModel()
 ) {
     val uiState by viewModel.uiState.collectAsStateWithLifecycle()
@@ -60,7 +60,7 @@ fun RegisterScreen(
             .background(AuthBackground)
             .padding(horizontal = 24.dp),
         verticalArrangement = Arrangement.spacedBy(24.dp, Alignment.CenterVertically),
-        horizontalAlignment = Alignment.CenterHorizontally
+        horizontalAlignment = Alignment.Start
     ) {
 
         Row(Modifier
@@ -73,10 +73,17 @@ fun RegisterScreen(
         }
 
 
-        Column(verticalArrangement = Arrangement.spacedBy(8.dp)) {
+        Column(
+            verticalArrangement = Arrangement.spacedBy(8.dp),
+            horizontalAlignment = Alignment.Start
+        ) {
             Text(
                 text = stringResource(R.string.hello_register),
                 style = MaterialTheme.typography.headlineMedium.copy(fontWeight = FontWeight.Bold)
+            )
+            Text(
+                text = stringResource(R.string.register_to_get_started),
+                style = MaterialTheme.typography.bodyLarge
             )
         }
 
@@ -151,7 +158,9 @@ fun RegisterScreen(
         }
 
         Row(
-            verticalAlignment = Alignment.CenterVertically
+            verticalAlignment = Alignment.CenterVertically,
+            modifier = Modifier.fillMaxWidth(),
+            horizontalArrangement = Arrangement.Center
         ) {
             HorizontalDivider(
                 modifier = Modifier.weight(1f),
@@ -191,6 +200,7 @@ fun RegisterScreen(
             },
             modifier = Modifier
                 .padding(bottom = 16.dp)
+                .align(Alignment.CenterHorizontally)
                 .clickable(onClick = onLoginClick),
             style = MaterialTheme.typography.bodySmall
         )
@@ -201,10 +211,10 @@ fun RegisterScreen(
 @Composable
 fun RegisterScreenPreview() {
     RegisterScreen(
-        modifier = Modifier,
         onLoginClick = {},
         onRegisterSuccess = {},
         onBackPress = {},
+        modifier = Modifier,
         viewModel = RegisterViewModel()
     )
 } 
