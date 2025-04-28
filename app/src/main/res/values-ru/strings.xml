@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">GymBro</string>
+    
+    <!-- LoginScreen strings -->
+    <string name="welcome_back">С возвращением!</string>
+    <string name="glad_to_see_you">Рады видеть Вас снова!</string>
+    <string name="enter_email">Введите вашу почту</string>
+    <string name="enter_password">Введите ваш пароль</string>
+    <string name="forgot_password">Забыли пароль?</string>
+    <string name="login">Войти</string>
+    <string name="or_login_with">Или войдите с помощью</string>
+    <string name="dont_have_account">Нет аккаунта? </string>
+    <string name="register_now">Зарегистрироваться</string>
+    <string name="back">Назад</string>
+    
+    <!-- RegisterScreen strings -->
+    <string name="hello_register">Здравствуйте! Зарегистрируйтесь, чтобы начать</string>
+    <string name="enter_username">Имя пользователя</string>
+    <string name="confirm_password">Подтвердите пароль</string>
+    <string name="or_register_with">Или зарегистрируйтесь с помощью</string>
+    <string name="already_have_account">Уже есть аккаунт? </string>
+    <string name="login_now">Войти сейчас</string>
+    
+    <!-- WelcomeScreen strings -->
+    <string name="fitness_person">Изображение фитнеса</string>
+    <string name="register">Регистрация</string>
+</resources> 
