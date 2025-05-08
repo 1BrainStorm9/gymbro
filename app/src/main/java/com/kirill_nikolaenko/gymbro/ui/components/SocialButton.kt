@@ -19,13 +19,15 @@ import com.kirill_nikolaenko.gymbro.ui.theme.LogButton
  * 
  * @param icon Resource ID for the social media icon
  * @param onClick Callback to execute when the button is clicked
+ * @param contentDescription Description for accessibility
  * @param modifier Optional modifier for the button
  */
 @Composable
 fun SocialButton(
+    modifier: Modifier = Modifier,
     icon: Int,
     onClick: () -> Unit,
-    modifier: Modifier = Modifier
+    contentDescription: String? = null
 ) {
     Surface(
         shape = RoundedCornerShape(12.dp),
@@ -34,7 +36,7 @@ fun SocialButton(
     ) {
         Image(
             painter = painterResource(id = icon),
-            contentDescription = null,
+            contentDescription = contentDescription,
             contentScale = ContentScale.Fit,
             modifier = Modifier.background(LogButton).padding(16.dp)
         )
